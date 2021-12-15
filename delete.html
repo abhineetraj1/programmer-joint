@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="shortcut icon" href="/files/favicon.png">
+	<style type="text/css">
+		body{background:black;}
+		p{font-size:28px;color:white;}
+		tr{height:9vh;}
+		td{font-size:28px;color:white;}
+		input{height:30px;font-size:28px;border-radius:50px;text-align:center;}
+		#f{font-size:50px;}
+		button{width:22%;text-align:center;height:40px;font-size:28px;background:#f3ca20;border-radius:50px;}
+	</style>
+</head>
+<body>
+<center>
+<p id="f">Delete Your account</p>
+<form action="/delete" method="POST">
+	<table>
+		<tr>
+			<td>Username:</td>
+			<td><input type="text" name="username"></td>
+		</tr>
+		<tr>
+			<td>Password:</td>
+			<td><input type="password" name="password"></td>
+		</tr>
+	</table>
+	<button>Continue</button>
+</form>
+</center>
+</body>
+</html>

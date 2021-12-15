@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+		function pot() {
+			var a = "<form id='frm' action='/post' method='POST'><p id='trr'></p><p>Enter title of your project : <input type='text' id='pot-title'></p><br><br><p>Enter your code</p><br><textarea id='text' name='text'>//enter your code here</textarea></form><br><button onclick='m()' class='txt-btn'>Post</button>";
+			document.getElementById("content").innerHTML=a;
+		}
+		function hme(){
+			var a = 'cttn';
+			var t = 'tbntt';
+			document.getElementById("content").innerHTML=a+t;
+			var b = document.createElement("form");
+			b.action="/refresh";
+			b.method="GET";
+			document.body.appendChild(b);
+			b.submit();
+		}
+		function delete_commt() {
+			var a = document.createElement("form");
+			a.action="/delete_comment";
+			a.innerHTML="<input type='text' name='text' value='"+localStorage.getItem("username")+"'>";
+			a.method="POST";
+			document.body.appendChild(a);
+			a.submit();
+		}
+		function changw_pass() {
+			var a = document.createElement("form");
+			a.action="/change_password";
+			var p = prompt("Enter new password")
+			a.innerHTML="<input type='text' name='new_pss' value='"+p+"'><input type='text' name='text' value='"+localStorage.getItem("username")+"'>";
+			a.method="POST";
+			document.body.appendChild(a);
+			a.submit();
+		}
+
+		function sett(){
+			var a  = '<center><a href="/delete"><button onclick="del_acc()" class="sett-btn">Delete your account</button></a><br><br><a href="help"><button class="sett-btn">Report a problem</button></a><br><br><button class="sett-btn" onclick="delete_commt()">Delete all your comments</button><br><br><button class="sett-btn" onclick="changw_pass()">Change password</button></center>';
+			document.getElementById("content").innerHTML=a;
+		}
+		function copy_code(arg) {
+			var a = document.getElementById(String(arg));
+			a.select();
+			document.execCommand("copy")
+		}
+		function m() {
+			var k = new Date();
+			var t = String(k.getFullYear()) + String(k.getDay())+String(k.getDate()) + String(k.getHours()) + String(k.getMinutes()) + String(k.getSeconds())+ String(k.getMilliseconds());
+			var d = document.getElementById("trr");
+			d.innerHTML="<input type='text' value='"+localStorage.getItem("username")+"' name='username'>";
+			var a = document.getElementById("frm");
+			var b = document.getElementById("text");
+			var c = "<br><br><br><div style='border:solid;border-color:black;cssborder-width:10px;border-radius:20px;background:#f3ca20;height:27vh;width:100%;'><p style='font-size:20px;float:left;width:100%;color:black;text-align:center;'>@"+localStorage.getItem('username')+"</p><br><p style='font-size:20px;float:left;width:100%;color:black;'>Title: "+document.getElementById("pot-title").value+"<button onclick='copy_code("+t+")' style='width:23%;height:6vh;float:right;font-size:20px;border-radius:20px;background:white;'>Copy this code</button></p><br><textarea id='"+t+"' class='post-area' readonly>"+b.value+"</textarea></div><br><br><br><br>";
+			b.value=c;
+			a.submit();
+		}
+	</script>
+	<link rel="shortcut icon" href="/files/favicon.png">
+	<style type="text/css">
+		.comment{border-radius:10px;background:orange;height:30vh;width:100%;}
+		.post-area{font-size:18px;border-radius:10px;height:22vh;width:100%;float:left;background:grey;color:white;}
+		.sett-btn{background:#f3ca20;font-size:28px;align-content:center;width:30%;height:8vh;text-align:center;border-radius:20px;}
+		p{font-size:23px;color:white;}
+		input{height:4vh;width:40%;font-size:20px;border-radius:50px;text-align:center;}
+		#main{width:100%;}
+		#text{width:100%;height:50vh;border-radius:10px;font-size:20px;color:white;background:grey;}
+		#controls{height:10vh;width:90%;position:fixed;bottom:0px;background:white;border-radius:20px;}
+		.menu-bar{border-radius:20px;width:20%;font-size:23px;height:8vh;background:#f3ca20;}
+		.txt-btn{background:#f3ca20;border-radius:25px;height:8vh;width:20%;font-size:28px;}
+		body{background:black;}
+		#content{width:100%;height:90vh;}
+	</style>
+</head>
+<body>
+<div id="main">
+	<div id="content">
+		<button onclick="hme()" class="menu-bar">Refresh</button>
+		cttntbntt
+	</div>
+	<div id="controls">
+		<center>
+		<button onclick="hme()" class="menu-bar">Home</button>
+		<button onclick="pot()" class="menu-bar">Add post</button>
+		<button onclick="sett()" class="menu-bar">Settings</button>
+		</center>
+	</div>
+</div>
+</body>
+</html>
