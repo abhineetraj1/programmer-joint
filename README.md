@@ -5,8 +5,4 @@ This is a flask based web project. It's just like an social media where you can 
 
 2)Install flask
 
-pip install flask
-
---OR--
-
-pip3 install flask
+```pip install flask```
