@@ -1,8 +1,56 @@
-# programmer-joint
-This is a flask based web project. It's just like an social media where you can share the source code of your open source project.
+# Programmer's joint
 
-1)Download and install python3.X and pip .
+Made in python3.6 (using Flask lib)
 
-2)Install flask
+## Installation
+First install python3.6 in your respective system
 
-```pip install flask```
+### For macOS
+
+Open terminal , execute the below code
+
+```
+pip3 install flask
+```
+
+### For linux
+
+Open terminal , execute the below code
+
+```
+sudo pip3 install flask
+```
+
+### For windows
+
+Open command prompt (search for this, you'll get it) , execute the below code
+
+```
+pip3 install flask
+```
+
+
+## Execution
+
+### For macOS
+
+1) Open terminal in the respective folder (where you have downloaded the project) write the below code and hit enter
+
+```flask run```
+
+2) And then open web browser and go to -> http://127.0.0.1:5000
+
+### For Linux
+
+1) Open terminal in the respective folder (where you have downloaded the project) write the below code and hit enter
+
+```flask run```
+
+2) And then open web browser and go to -> http://127.0.0.1:5000
+
+
+### For Windows
+
+1) Download this source code and double click on file -> app.py .
+
+2) And then open web browser and go to -> http://127.0.0.1:5000
