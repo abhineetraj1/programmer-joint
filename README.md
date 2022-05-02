@@ -5,6 +5,7 @@ Made in python3.6 (using Flask lib)
 ## Installation
 1) First install python3.6 in your respective system
 2) Download this source code
+3) Delete file "info.txt" from folder name "static" and "ACC"
 
 ### For macOS
 
